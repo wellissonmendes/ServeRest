@@ -1,13 +1,11 @@
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.json.JSONObject;
-
-import static io.restassured.RestAssured.given;
 
 public class ApiTest {
 
@@ -69,10 +67,10 @@ public class ApiTest {
         realizarLogin();
 
         String productJson = "{\n" +
-                "  \"nome\": \""+productName+"\",\n" +
-                "  \"preco\": "+price+",\n" +
-                "  \"descricao\": \""+description+"\",\n" +
-                "  \"quantidade\": "+quantity+"\n" +
+                "  \"nome\": \"" + productName + "\",\n" +
+                "  \"preco\": " + price + ",\n" +
+                "  \"descricao\": \"" + description + "\",\n" +
+                "  \"quantidade\": " + quantity + "\n" +
                 "}";
 
         Response criarProdutoResposta = apiClient.criarProduto(productJson, token);
